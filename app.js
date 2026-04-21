@@ -1,10 +1,12 @@
 const http = require('http');
 
 const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
+  res.writeHead(200, {
+    'Content-Type': 'text/html; charset=utf-8'
+  });
 
   if (req.url === '/') {
-    res.end('Servidor en Ubuntu funcionando 🚀');
+    res.end('<h1>Servidor en Ubuntu funcionando 🚀</h1>');
   } else if (req.url === '/api') {
     res.end(JSON.stringify({ mensaje: "API funcionando 🚀" }));
   } else {
